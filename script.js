@@ -167,6 +167,7 @@ document.addEventListener("click", e => {
 // ================= Polaroid develops =================
 function watchPolaroid() {
   const pol = document.getElementById("polaroid");
+  if (!pol) return;
   const io = new IntersectionObserver(es => es.forEach(e => {
     if (e.isIntersecting) { pol.classList.add("in"); io.disconnect(); }
   }), { threshold: .45 });
