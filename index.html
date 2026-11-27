@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>These Kids Are Engaged · Ishan &amp; Aashka · #ISHKA</title>
+<meta name="description" content="Ishan &amp; Aashka are getting engaged — Friday, 01 January 2027, 6:30 PM · Govardhan Banquet &amp; Lawns, Vadodara · #ISHKA">
+<meta property="og:title" content="These Kids Are Engaged · Ishan & Aashka">
+<meta property="og:description" content="01 · 01 · 2027 · 6:30 PM onwards · Vadodara · #ISHKA">
+<meta property="og:image" content="photo.webp">
+<meta name="theme-color" content="#2a1a1c">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Allura&family=Playfair+Display:wght@500;600;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Noto+Serif+Gujarati:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+</head>
+<body class="locked">
+
+<!-- live animated sky (lanterns, bokeh, hearts) -->
+<canvas id="sky"></canvas>
+
+<!-- ============ INTRO ============ -->
+<div id="intro">
+  <div class="intro-bg"></div>
+  <div class="intro-inner">
+    <p class="intro-tag">#ISHKA</p>
+    <p class="typewriter" id="typer"></p>
+    <button id="begin" class="begin">
+      <span class="begin-ring"></span>
+      <span class="begin-heart">♥</span>
+    </button>
+    <p class="begin-label">Tap to open our story</p>
+  </div>
+</div>
+
+<!-- ============ SITE ============ -->
+<main id="site">
+
+<audio id="music" loop preload="auto"><source src="music.mp3" type="audio/mpeg"></audio>
+<button id="musicBtn" class="fab" aria-label="Music">♪</button>
+<button id="showerBtn" class="fab fab2" aria-label="Shower petals">🌸</button>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-veil"></div>
+
+  <div class="hero-content">
+    <svg class="flourish" viewBox="0 0 300 40" aria-hidden="true">
+      <path d="M10 25 C 60 5, 110 35, 140 20" />
+      <path d="M290 25 C 240 5, 190 35, 160 20" />
+      <path class="fh" d="M150 32 C 132 18, 136 6, 150 14 C 164 6, 168 18, 150 32 Z" />
+    </svg>
+    <h2 class="script-title">These Kids Are Engaged</h2>
+    <h1 class="names">Ishan <span>&amp;</span> Aashka</h1>
+    <div class="line-heart"><span></span><i>♥</i><span></span></div>
+    <p class="date-line">1 · 1 · 2027</p>
+    <p class="hashtag">#ISHKA</p>
+
+    <div class="arch-photo">
+      <div class="arch-inner"><img src="photo.webp" alt="Ishan and Aashka"></div>
+      <div class="arch-glow"></div>
+    </div>
+
+    <p class="hero-sub">Two little hearts, one forever story.<br>Join us as we begin our happily ever after.</p>
+    <div class="scroll-hint"><span></span>scroll</div>
+  </div>
+</section>
+
+<!-- STORY -->
+<section class="story">
+  <h2 class="sec-title reveal">Our Little Story</h2>
+  <div class="timeline">
+    <div class="tl-item reveal">
+      <div class="tl-dot">✦</div>
+      <h3>Then</h3>
+      <p>Two little hearts with big smiles, curls and giggles — who knew?</p>
+    </div>
+    <div class="tl-item reveal">
+      <div class="tl-dot">❀</div>
+      <h3>Now</h3>
+      <p>With the blessings of both our families, we are promising each other forever.</p>
+    </div>
+    <div class="tl-item reveal">
+      <div class="tl-dot">♥</div>
+      <h3>Forever</h3>
+      <p>And the beautiful beginning would be incomplete without you.</p>
+    </div>
+  </div>
+</section>
+
+<!-- POLAROID (develops on scroll) -->
+<section class="polaroid-sec">
+  <p class="sec-kicker reveal">a moment, developing…</p>
+  <div class="polaroid" id="polaroid">
+    <div class="pol-photo"><img src="photo.webp" alt="Ishan and Aashka as kids"></div>
+    <p class="pol-caption">Ishan &amp; Aashka · #ISHKA</p>
+    <span class="tape"></span>
+  </div>
+</section>
+
+<!-- ENVELOPE DATE -->
+<section class="env-sec">
+  <h2 class="sec-title reveal">Save The Date</h2>
+  <p class="sec-sub reveal" id="envHint">Keep scrolling — the envelope opens by itself ✉</p>
+  <div class="envelope" id="envelope" role="button" aria-label="Open envelope">
+    <div class="env-back"></div>
+    <div class="env-letter">
+      <p class="l-small">Friday</p>
+      <h1>01 January 2027</h1>
+      <h3>Engagement Ceremony</h3>
+      <p class="l-time">6:30 PM Onwards</p>
+    </div>
+    <div class="env-front"></div>
+    <div class="env-flap"></div>
+    <div class="env-seal">AI</div>
+  </div>
+</section>
+
+<!-- COUNTDOWN -->
+<section class="countdown">
+  <div class="cd-bg"></div>
+  <div class="cd-inner">
+    <h2 class="sec-title light reveal">Counting Every Heartbeat</h2>
+    <div class="timer reveal">
+      <div class="tbox"><span id="days">00</span><p>Days</p></div>
+      <div class="tbox"><span id="hours">00</span><p>Hours</p></div>
+      <div class="tbox"><span id="minutes">00</span><p>Minutes</p></div>
+      <div class="tbox"><span id="seconds">00</span><p>Seconds</p></div>
+    </div>
+    <a class="btn ghost reveal" target="_blank" rel="noopener"
+       href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Ishan+%26+Aashka+Engagement+%23ISHKA&amp;dates=20270101T130000Z/20270101T170000Z&amp;details=These+kids+are+engaged!+Join+us+to+celebrate.&amp;location=Govardhan+Banquet+%26+Lawns,+Dena+Road,+Opp.+Shubham+Elite,+Harni,+Vadodara,+Gujarat+390022">
+      📅 Add to Calendar
+    </a>
+  </div>
+</section>
+
+<!-- VENUE -->
+<section class="venue">
+  <div class="card reveal">
+    <h2 class="sec-title">Venue</h2>
+    <div class="pin">📍</div>
+    <h3 class="venue-name">Govardhan Banquet &amp; Lawns</h3>
+    <p class="venue-addr">Dena Road, Opp. Shubham Elite,<br>Harni, Vadodara,<br>Gujarat 390022, India</p>
+    <a class="btn" target="_blank" rel="noopener"
+       href="https://maps.google.com/maps?sca_esv=e727498416206bc8&amp;udm&amp;fvr=1&amp;pvq=Cg0vZy8xMWxsXzJrdjhuIgYKABACGAOJARkLTT_aziG3&amp;lqi=ChZnb3ZhcmRoYW4gYmFucXVldCBoYWxskgELZXZlbnRfdmVudWWqAQDgAQCKAgthMVRUajd5SlFpTQ&amp;vet=10CAAQoqAOahcKEwj48K7V_KaYAxUAAAAAHQAAAAAQCQ..i&amp;cs=0&amp;um=1&amp;ie=UTF-8&amp;fb=1&amp;gl=us&amp;sa=X&amp;ftid=0x395fcf1da16aa39d:0xb721ceda3f4d0b19">
+      Open in Google Maps
+    </a>
+  </div>
+</section>
+
+<!-- FAMILIES -->
+<section class="families">
+  <div class="card reveal">
+    <p class="kicker">With the blessings of</p>
+    <div class="fam-row">
+      <div class="fam">
+        <h4>Ishan</h4>
+        <p>S/o Mehul Shah<br>&amp; Sheetal Shah</p>
+      </div>
+      <div class="fam-heart">♥</div>
+      <div class="fam">
+        <h4>Aashka</h4>
+        <p>D/o Dhaval Shah<br>&amp; Priti Shah</p>
+      </div>
+    </div>
+    <p class="gujarati">"સ્નેહના આ પાવન બંધનને આપના આશીર્વાદથી વધુ મંગલમય બનાવો."</p>
+    <div class="line-heart"><span></span><i>♥</i><span></span></div>
+    <p class="regards">With love &amp; regards,</p>
+    <h3 class="family">Shah Family</h3>
+    <p class="relatives">All Relatives &amp; Friends</p>
+  </div>
+</section>
+
+<!-- BLESS -->
+<section class="bless">
+  <h2 class="sec-title reveal">Send Your Blessings</h2>
+  <p class="sec-sub reveal">Tap the diya to light it for us</p>
+  <button class="big-diya reveal" id="diya" aria-label="Light the diya">
+    <span class="d-flame"></span><span class="d-bowl"></span>
+  </button>
+  <p class="bless-msg" id="blessMsg"></p>
+  <a class="btn reveal" id="shareBtn" target="_blank" rel="noopener" href="#">Share this invite on WhatsApp</a>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="foot-bg"></div>
+  <div class="foot-inner">
+    <p class="foot-line">We can't wait to celebrate with you</p>
+    <h1 class="foot-names">Ishan <span class="heart">❤️</span> Aashka</h1>
+    <p class="hashtag light">#ISHKA</p>
+  </div>
+</footer>
+
+</main>
+
+<div id="petals"></div>
+<script src="script.js"></script>
+</body>
+</html>
